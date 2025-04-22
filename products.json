@@ -1,0 +1,85 @@
+{
+    "products": [
+        {
+            "basePrice": 10.99,
+            "category": "Tobacco",
+            "expDate": "2024-12-31",
+            "id": "T001",
+            "name": "Marlboro",
+            "quantity": 50,
+            "specialTax": 0.15,
+            "type": "tobacco"
+        },
+        {
+            "basePrice": 9.99,
+            "category": "Tobacco",
+            "expDate": "2024-12-31",
+            "id": "T002",
+            "name": "Camel",
+            "quantity": 50,
+            "specialTax": 0.15,
+            "type": "tobacco"
+        },
+        {
+            "basePrice": 2.0,
+            "category": "Lottery",
+            "id": "L001",
+            "name": "Mega Millions",
+            "quantity": 100,
+            "type": "lottery"
+        },
+        {
+            "basePrice": 0.5,
+            "category": "Grocery",
+            "expDate": "04-29-2025",
+            "id": "G001",
+            "isPerishable": true,
+            "name": "Granny Smith Apple",
+            "quantity": 200,
+            "salesTax": 0.0,
+            "type": "grocery"
+        },
+        {
+            "basePrice": 1.15,
+            "category": "Grocery",
+            "expDate": "05-04-2025",
+            "id": "G003",
+            "isPerishable": true,
+            "name": "Mango",
+            "quantity": 142,
+            "salesTax": 0.0,
+            "type": "grocery"
+        },
+        {
+            "basePrice": 0.85,
+            "category": "Grocery",
+            "expDate": "05-02-2025",
+            "id": "G002",
+            "isPerishable": true,
+            "name": "Banana",
+            "quantity": 300,
+            "salesTax": 0.0,
+            "type": "grocery"
+        },
+        {
+            "basePrice": 5.0,
+            "category": "Lottery",
+            "id": "L002",
+            "name": "Powerball",
+            "quantity": 50,
+            "type": "lottery"
+        },
+        {
+            "basePrice": 0.8,
+            "category": "Grocery",
+            "expDate": "2026-03-25",
+            "id": "G004",
+            "isPerishable": true,
+            "name": "Spinach",
+            "quantity": 6,
+            "salesTax": 0.0,
+            "type": "grocery"
+        }
+    ],
+    "totalSales": 10.800000190734863
+}
