@@ -6,16 +6,13 @@
 
 class LotteryTicket : public Product {
 private:
-    float cityTax;
-    float countyTax;
+    static const double CITY_TAX;    // 7% city tax
+    static const double COUNTY_TAX;  // 3% county tax
 
 public:
-    LotteryTicket(const string& id, const string& name, const string& expDate, 
-                 float basePrice, float cityTax, float countyTax, int quantity = 0);
+    LotteryTicket(const string& id, const string& name, double basePrice, int quantity = 0);
     
-    float getCityTax() const;
-    float getCountyTax() const;
-    float computePrice() const override;
+    double computePrice() const override;
     void displayInfo() const override;
 };
 

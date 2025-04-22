@@ -2,31 +2,31 @@
 #include <iomanip>
 #include <iostream>
 
-LotteryTicket::LotteryTicket(const string& id, const string& name, const string& expDate, 
-                           float basePrice, float cityTax, float countyTax, int quantity)
-    : Product(id, name, "Lottery", expDate, basePrice, quantity),
-      cityTax(cityTax), countyTax(countyTax) {}
+using namespace std;
 
-float LotteryTicket::getCityTax() const {
-    return cityTax;
+// These rates are applied to the base price of lottery tickets
+const double LotteryTicket::CITY_TAX = 0.07;    // 7% city tax
+const double LotteryTicket::COUNTY_TAX = 0.03;  // 3% county tax
+
+// Creates a new lottery ticket with the given parameters, sets category to "Lottery" and expiration date to "N/A"
+LotteryTicket::LotteryTicket(const string& id, const string& name, double basePrice, int quantity)
+    : Product(id, name, "Lottery", "N/A", basePrice, quantity) {}
+
+
+// Calculates the final price
+double LotteryTicket::computePrice() const {
+    double totalTax = getBasePrice() * (CITY_TAX + COUNTY_TAX);
+    return roundTo3Decimals(getBasePrice() + totalTax);
 }
 
-float LotteryTicket::getCountyTax() const {
-    return countyTax;
-}
-
-float LotteryTicket::computePrice() const {
-    return getBasePrice() + cityTax + countyTax;
-}
-
+// Shows all relevant information about the lottery ticket:
 void LotteryTicket::displayInfo() const {
     cout << "ID: " << getId() << endl;
     cout << "Name: " << getName() << endl;
     cout << "Category: " << getCategory() << endl;
-    cout << "Expiration Date: " << getExpDate() << endl;
-    cout << "Base Price: $" << fixed << setprecision(2) << getBasePrice() << endl;
-    cout << "City Tax: $" << fixed << setprecision(2) << cityTax << endl;
-    cout << "County Tax: $" << fixed << setprecision(2) << countyTax << endl;
-    cout << "Total Price: $" << fixed << setprecision(2) << computePrice() << endl;
+    cout << "Base Price: $" << fixed << setprecision(3) << getBasePrice() << endl;
+    cout << "City Tax: $" << fixed << setprecision(3) << getBasePrice() * CITY_TAX << endl;
+    cout << "County Tax: $" << fixed << setprecision(3) << getBasePrice() * COUNTY_TAX << endl;
+    cout << "Total Price: $" << fixed << setprecision(3) << computePrice() << endl;
     cout << "Quantity: " << getQuantity() << endl;
 } 

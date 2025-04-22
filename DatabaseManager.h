@@ -18,6 +18,10 @@ class DatabaseManager {
 private:
     string filename;
     
+    // Helper methods to convert between JSON and Product objects
+    shared_ptr<Product> jsonToProduct(const json& j);
+    json productToJson(const shared_ptr<Product>& product);
+    
 public:
     DatabaseManager(const string& file = "products.json");
     
@@ -27,10 +31,6 @@ public:
     // Save all products to JSON file
     bool saveProducts(const vector<shared_ptr<Product>>& products);
     
-private:
-    // Helper methods to convert between JSON and Product objects
-    shared_ptr<Product> jsonToProduct(const json& j);
-    json productToJson(const shared_ptr<Product>& product);
 };
 
-#endif // DATABASE_MANAGER_H 
+#endif 

@@ -26,4 +26,4 @@ public:
     double getSpecialTax() const;
 };
 
-#endif // TOBACCO_H 
+#endif 

@@ -1,6 +1,5 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
-
 #include "Product.h"
 #include "Tobacco.h"
 #include "LotteryTickets.h"
@@ -15,7 +14,7 @@ using namespace std;
 class Inventory {
 private:
     // Using smart pointers to manage product objects
-    vector<shared_ptr<Product>> products;
+    vector<shared_ptr<Product> > products;
     float totalSales = 0.0;  // Track total sales revenue
 
     void saveToDatabase();
@@ -34,10 +33,10 @@ public:
     // Remove a product by ID
     bool removeProduct(const string& id);
     
-    // Vector search functions
-    vector<shared_ptr<Product>> searchByCategory(const string& category) const;
-    vector<shared_ptr<Product>> searchByName(const string& name) const;
-    vector<shared_ptr<Product>> searchByPriceRange(float minPrice, float maxPrice) const;
+    // Search functions
+    vector<shared_ptr<Product> > searchByCategory(const string& category) const;
+    vector<shared_ptr<Product> > searchByName(const string& name) const;
+    vector<shared_ptr<Product> > searchByPriceRange(float minPrice, float maxPrice) const;
     
     // Get product by ID
     shared_ptr<Product> getProductById(const string& id) const;
@@ -57,10 +56,10 @@ public:
     // Update product quantity
     bool updateProductQuantity(const string& id, int quantityChange);
     
-    // Add method to update total sales with rounding
+    // Add method to update total sales
     void addToTotalSales(float amount) {
-        totalSales = roundTo3Decimals(totalSales + amount);
+        totalSales += amount;
     }
 };
 
-#endif // INVENTORY_H 
+#endif 

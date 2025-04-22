@@ -90,7 +90,7 @@ shared_ptr<Product> Inventory::getProductById(const string& id) const {
     return nullptr;
 }
 
-// Display all products
+// Display all products making sure the categories are displayed together
 void Inventory::displayAllProducts() const {
     if (products.empty()) {
         cout << "No products in inventory." << endl;

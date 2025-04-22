@@ -53,7 +53,7 @@ int getValidInt(const string& prompt) {
     }
 }
 
-// Function to display menu and get choice
+// Function to display menu in each color and get user choice
 int displayMenu() {
     cout << BOLD << BLUE << "\n=== POS System Menu ===" << RESET << "\n";
     cout << YELLOW << "1. Search Inventory\n";
@@ -82,7 +82,7 @@ void handleSearch(const Inventory& inventory) {
     cin >> choice;
     clearInputBuffer();
     
-    switch (choice) {
+    switch (choice) { // switch cases for the search menu corresponding to the user choice
         case 1: {
             string category;
             cout << CYAN << "Enter category: " << RESET;
@@ -210,7 +210,7 @@ void handleAdd(Inventory& inventory) {
     float price;
     int quantity;
     
-    switch(choice) {
+    switch(choice) { // switch cases for which type of product the user wants to add
         case 1: {
             cout << "Enter Tobacco Product ID: ";
             getline(cin, id);

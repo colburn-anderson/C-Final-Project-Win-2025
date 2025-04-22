@@ -1,6 +1,7 @@
 #ifndef PRODUCT_H
 #define PRODUCT_H
 
+#include <cmath>
 #include <string>
 #include <memory>
 
@@ -24,7 +25,8 @@ protected:
 
 public:
     // Constructor
-    Product(const string& id, const string& name, const string& category, const string& expDate, double basePrice, int quantity = 0);
+    Product(const string& id, const string& name, const string& category, 
+            const string& expDate, double basePrice, int quantity = 0);
     
     // Virtual destructor for proper cleanup of derived classes
     virtual ~Product() = default;
